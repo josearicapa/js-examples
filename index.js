@@ -1,6 +1,19 @@
-// Import stylesheets
 import './style.css';
 
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+const divContent = document.getElementById('app');
+divContent.innerHTML = '<h1>Hola mundo</h1>';
+
+const contador = () => {
+  let numero = 0;
+
+  const incrementa = () => {
+    numero++;
+    console.log(numero);
+  };
+  return incrementa;
+};
+
+const incrementar = contador();
+incrementar();
+incrementar();
+incrementar();
