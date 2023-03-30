@@ -1,47 +1,17 @@
-import './style.css';
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
-const divContent = document.getElementById('app');
-divContent.innerHTML = '<h1>Hola mundo</h1>';
+let sum1 = 0;
 
-const contador = () => {
-  let numero = 0;
+for (let i = 0; i < matrix.length; i++) {
+  for (let j = 0; j < matrix[i].length; j++) {
+    if (i === j) {
+      sum1 += matrix[i][j];
+    }
+  }
+}
 
-  const incrementa = () => {
-    numero++;
-    //console.log(numero);
-  };
-  return incrementa;
-};
-
-const incrementar = contador();
-incrementar();
-incrementar();
-incrementar();
-
-// quitar duplicados de array
-const names = ['Jose', 'Jose', 'Luis', 'Luis'];
-
-const uniqueNames = names.reduce((acc, current) => {
-  !acc.includes(current) && acc.push(current);
-  return acc;
-}, []);
-
-const numbers = [2, 2];
-
-const total = numbers.reduce((sum, number) => sum + number, 0);
-
-console.log(uniqueNames);
-console.log(total);
-
-// Ejemplo de acceso al this
-const externalString = 'Luis';
-const object = {
-  name: 'Jose',
-  normalFunction: function () {
-    console.log(this.name);
-  },
-  arrowFunction: () => console.log(this.name, this),
-};
-
-object.normalFunction();
-object.arrowFunction();
+console.log(sum1);
