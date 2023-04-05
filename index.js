@@ -1,6 +1,7 @@
 let array = [4523,8092,9419,8076];
 array = [4602,8519,7585,8362];
 array = [4523,8092,9419,8076];
+array = [2081,8403,9107,8400];
 
 const x1 = array[0];
 const v1 = array[1];
@@ -13,21 +14,19 @@ let jumpX2 = x2;
 
 let result = 'YES';
 
-console.log(`${jumpX1} - ${jumpX2}`);
-
 if(jumpX1 >= jumpX2){
   result = 'NO';
 }
 else{
   do {
-    if (jumpX1 >= 100000 || jumpX2 >= 100000) {
+    if (jumpX1 >= 100000000 || jumpX2 >= 100000000) {
       result = 'NO';
       break;
     }
   
     jumpX1 += v1;
     jumpX2 += v2;
-    console.log(`${jumpX1} - ${jumpX2}`);
+    
   } while (jumpX1 != jumpX2);
 }
 
