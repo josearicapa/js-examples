@@ -1,41 +1,36 @@
-let s = '07:05:45PM';
-s = '07:05:45PM';
-s = '1:00:00PM';
+let array = [4523,8092,9419,8076];
+array = [4602,8519,7585,8362];
+array = [4523,8092,9419,8076];
 
-const objTime = {
-  1: '13',
-  2: '14',
-  3: '15',
-  4: '16',
-  5: '17',
-  6: '18',
-  7: '19',
-  8: '20',
-  9: '21',
-  10: '22',
-  11: '23',
-  12: '12',
-};
+const x1 = array[0];
+const v1 = array[1];
 
-const arrayTime = s.split(':');
-const abbr = arrayTime[2].slice(2);
+const x2 = array[2];
+const v2 = array[3];
 
+let jumpX1 = x1;
+let jumpX2 = x2;
 
-let hourString = arrayTime[0];
-const minuteString = arrayTime[1];
-const secondstring = arrayTime[2].slice(0, 2);
+let result = 'YES';
 
-const hour = parseInt(hourString);
-let finalTime = '';
+console.log(`${jumpX1} - ${jumpX2}`);
 
-if (abbr === 'PM') {
-  hourString = objTime[hour];
-} else {
-  hour === 12 && (hourString = '00');
+if(jumpX1 >= jumpX2){
+  result = 'NO';
+}
+else{
+  do {
+    if (jumpX1 >= 100000 || jumpX2 >= 100000) {
+      result = 'NO';
+      break;
+    }
+  
+    jumpX1 += v1;
+    jumpX2 += v2;
+    console.log(`${jumpX1} - ${jumpX2}`);
+  } while (jumpX1 != jumpX2);
 }
 
-finalTime = `${hourString}:${minuteString}:${secondstring}`;
 
 
-console.log(hour);
-console.log(finalTime);
+console.log(result);
